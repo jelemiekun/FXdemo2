@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxdemo2.Scene1Controller">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="402.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="400.0" stroke="BLACK" strokeType="INSIDE" width="402.0" />
+            <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="145.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Media/photo1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="400.0" prefHeight="400.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Button fx:id="btnLeft" layoutX="14.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#btnLeftClicked" prefHeight="26.0" prefWidth="54.0" text="LEFT" />
+            <Button fx:id="btnRight" layoutX="131.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#btnRightClicked" prefHeight="26.0" prefWidth="54.0" text="RIGHT" />
+            <Button fx:id="btnDown" layoutX="73.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#btnDownClicked" text="DOWN" />
+            <Button fx:id="btnUp" layoutX="73.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#btnUpClicked" prefHeight="26.0" prefWidth="54.0" text="UP" />
+            <Button fx:id="btnUpRight" layoutX="132.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#btnUpRightClicked" prefHeight="26.0" prefWidth="53.0" text="UP-RIGHT">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUpLeft" layoutX="16.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#btnUpLeftClicked" prefHeight="26.0" prefWidth="50.0" text="UP-LEFT">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDownRight" layoutX="132.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#btnDownRightClicked" prefHeight="26.0" prefWidth="53.0" text="DOWN-RIGHT">
+               <font>
+                  <Font size="6.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDownLeft" layoutX="16.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#btnDownLeftClicked" prefHeight="26.0" prefWidth="50.0" text="DOWN-LEFT">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnChangePhoto" layoutX="13.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#btnChangePhotoClicked" prefHeight="26.0" prefWidth="174.0" text="CHANGE TO PHOTO 2" />
+            <Button fx:id="btnRotateLeft" layoutX="16.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#btnRotateLeftClicked" prefHeight="26.0" prefWidth="84.0" text="ROTATE LEFT">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnRotateRight" layoutX="100.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#btnRotateRightClicked" prefHeight="26.0" prefWidth="84.0" text="ROTATE RIGHT">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCenter" layoutX="73.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#btnCenterClicked" prefHeight="26.0" prefWidth="54.0" text="CENTER">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Label layoutX="16.0" layoutY="317.0" text="Position X:" />
+            <Label layoutX="16.0" layoutY="336.0" text="Position Y:" />
+            <Label layoutX="17.0" layoutY="354.0" text="Rotation:" />
+            <Label fx:id="positionX" layoutX="92.0" layoutY="317.0" text="0" />
+            <Label fx:id="positionY" layoutX="92.0" layoutY="336.0" text="0" />
+            <Label fx:id="rotationR" layoutX="92.0" layoutY="354.0" text="0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
