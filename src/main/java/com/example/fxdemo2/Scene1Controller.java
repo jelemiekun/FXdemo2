@@ -168,12 +168,16 @@ public class Scene1Controller {
     @FXML
     void btnRotateLeftClicked() {
         img.setRotate(img.getRotate() - 5);
+        if (img.getRotate() == -360)
+            img.setRotate(0);
         rotationR.setText(String.valueOf(img.getRotate()));
     }
 
     @FXML
     void btnRotateRightClicked() {
         img.setRotate(img.getRotate() + 5);
+        if (img.getRotate() == 360)
+            img.setRotate(0);
         rotationR.setText(String.valueOf(img.getRotate()));
     }
 
@@ -181,19 +185,19 @@ public class Scene1Controller {
     void btnKeysPressed(KeyEvent event) {
         if (event.getCode() == KeyCode.W)
             btnUpClicked();
-        else if (event.getCode() == KeyCode.W && event.getCode() == KeyCode.D)
+        if (event.getCode() == KeyCode.W && event.getCode() == KeyCode.D)
             btnUpRightClicked();
-        else if (event.getCode() == KeyCode.D)
+        if (event.getCode() == KeyCode.D)
             btnRightClicked();
-        else if (event.getCode() == KeyCode.D && event.getCode() == KeyCode.S)
+        if (event.getCode() == KeyCode.D && event.getCode() == KeyCode.S)
             btnDownRightClicked();
-        else if (event.getCode() == KeyCode.S)
+        if (event.getCode() == KeyCode.S)
             btnDownClicked();
-        else if (event.getCode() == KeyCode.S && event.getCode() == KeyCode.A)
+        if (event.getCode() == KeyCode.S && event.getCode() == KeyCode.A)
             btnDownLeftClicked();
-        else if (event.getCode() == KeyCode.A)
+        if (event.getCode() == KeyCode.A)
             btnLeftClicked();
-        else if (event.getCode() == KeyCode.A && event.getCode() == KeyCode.W)
+        if (event.getCode() == KeyCode.A && event.getCode() == KeyCode.W)
             btnUpLeftClicked();
 
         if (event.getCode() == KeyCode.Q)
