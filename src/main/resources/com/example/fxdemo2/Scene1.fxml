@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxdemo2.Scene1Controller">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxdemo2.Scene1Controller">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="402.0">
          <children>
@@ -20,7 +20,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="400.0" prefHeight="400.0" prefWidth="200.0">
+      <AnchorPane layoutX="400.0" onKeyPressed="#btnKeysPressed" prefHeight="400.0" prefWidth="200.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
             <Button fx:id="btnLeft" layoutX="14.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#btnLeftClicked" prefHeight="26.0" prefWidth="54.0" text="LEFT" />

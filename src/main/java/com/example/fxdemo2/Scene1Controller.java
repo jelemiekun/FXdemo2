@@ -5,9 +5,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+
+import java.security.Key;
 
 public class Scene1Controller {
+
+    @FXML
+    private AnchorPane mainPane;
 
     @FXML
     private Button btnCenter;
@@ -67,7 +75,7 @@ public class Scene1Controller {
 
 
     @FXML
-    void btnCenterClicked(MouseEvent event) {
+    void btnCenterClicked() {
         img.setLayoutX(145);
         img.setLayoutY(125);
         x = 0;
@@ -77,14 +85,14 @@ public class Scene1Controller {
     }
 
     @FXML
-    void btnDownClicked(MouseEvent event) {
+    void btnDownClicked() {
         img.setLayoutY(img.getLayoutY() + 5);
         y -= 5;
         positionY.setText(String.valueOf(y));
     }
 
     @FXML
-    void btnDownLeftClicked(MouseEvent event) {
+    void btnDownLeftClicked() {
         img.setLayoutX(img.getLayoutX() - 5);
         img.setLayoutY(img.getLayoutY() + 5);
         x -= 5;
@@ -94,7 +102,7 @@ public class Scene1Controller {
     }
 
     @FXML
-    void btnDownRightClicked(MouseEvent event) {
+    void btnDownRightClicked() {
         img.setLayoutX(img.getLayoutX() + 5);
         img.setLayoutY(img.getLayoutY() + 5);
         x += 5;
@@ -104,28 +112,28 @@ public class Scene1Controller {
     }
 
     @FXML
-    void btnLeftClicked(MouseEvent event) {
+    void btnLeftClicked() {
         img.setLayoutX(img.getLayoutX() - 5);
         x -= 5;
         positionX.setText(String.valueOf(x));
     }
 
     @FXML
-    void btnRightClicked(MouseEvent event) {
+    void btnRightClicked() {
         img.setLayoutX(img.getLayoutX() + 5);
         x += 5;
         positionX.setText(String.valueOf(x));
     }
 
     @FXML
-    void btnUpClicked(MouseEvent event) {
+    void btnUpClicked() {
         img.setLayoutY(img.getLayoutY() - 5);
         y += 5;
         positionY.setText(String.valueOf(y));
     }
 
     @FXML
-    void btnUpLeftClicked(MouseEvent event) {
+    void btnUpLeftClicked() {
         img.setLayoutX(img.getLayoutX() - 5);
         img.setLayoutY(img.getLayoutY() - 5);
         x -= 5;
@@ -135,7 +143,7 @@ public class Scene1Controller {
     }
 
     @FXML
-    void btnUpRightClicked(MouseEvent event) {
+    void btnUpRightClicked() {
         img.setLayoutX(img.getLayoutX() + 5);
         img.setLayoutY(img.getLayoutY() - 5);
         x += 5;
@@ -145,7 +153,7 @@ public class Scene1Controller {
     }
 
     @FXML
-    void btnChangePhotoClicked(MouseEvent event) {
+    void btnChangePhotoClicked() {
         if (picture) {
             btnChangePhoto.setText("CHANGE TO PHOTO 2");
             img.setImage(image1);
@@ -158,14 +166,42 @@ public class Scene1Controller {
     }
 
     @FXML
-    void btnRotateLeftClicked(MouseEvent event) {
+    void btnRotateLeftClicked() {
         img.setRotate(img.getRotate() - 5);
         rotationR.setText(String.valueOf(img.getRotate()));
     }
 
     @FXML
-    void btnRotateRightClicked(MouseEvent event) {
+    void btnRotateRightClicked() {
         img.setRotate(img.getRotate() + 5);
         rotationR.setText(String.valueOf(img.getRotate()));
+    }
+
+    @FXML
+    void btnKeysPressed(KeyEvent event) {
+        if (event.getCode() == KeyCode.W)
+            btnUpClicked();
+        else if (event.getCode() == KeyCode.W && event.getCode() == KeyCode.D)
+            btnUpRightClicked();
+        else if (event.getCode() == KeyCode.D)
+            btnRightClicked();
+        else if (event.getCode() == KeyCode.D && event.getCode() == KeyCode.S)
+            btnDownRightClicked();
+        else if (event.getCode() == KeyCode.S)
+            btnDownClicked();
+        else if (event.getCode() == KeyCode.S && event.getCode() == KeyCode.A)
+            btnDownLeftClicked();
+        else if (event.getCode() == KeyCode.A)
+            btnLeftClicked();
+        else if (event.getCode() == KeyCode.A && event.getCode() == KeyCode.W)
+            btnUpLeftClicked();
+
+        if (event.getCode() == KeyCode.Q)
+            btnRotateLeftClicked();
+        else if (event.getCode() == KeyCode.E)
+            btnRotateRightClicked();
+
+        if (event.getCode() == KeyCode.SPACE)
+            btnChangePhotoClicked();
     }
 }
